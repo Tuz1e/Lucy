@@ -15,17 +15,17 @@ public:
 	void Update();
 	void MainMenu();
 
-	Player myPlayer;
-	GameState myGState;
-	World myWorld;
+	static Player& GPlayer;
+	static World& GWorld;
 
 	int myCho;
 
 	//Accessors
-	inline bool GetIsRunning() const { return this->myIsRunning; }
+	inline bool GetIsRunning() const { return this->myExecutionFlag; }
 
 private:
-	bool myIsRunning; //'TRUE' if game is running.
+	GameState myGState;
+	bool myExecutionFlag; //'TRUE' if game is running.
 };
 
 #endif

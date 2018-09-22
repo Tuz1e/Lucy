@@ -30,7 +30,10 @@
     <ClCompile Include="World.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Dog.cpp">
+    <ClCompile Include="Dimension.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Town.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,16 +56,13 @@
     <ClInclude Include="World.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Dog.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WorldConst.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameConst.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerConst.h">
+    <ClInclude Include="Dimension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Town.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

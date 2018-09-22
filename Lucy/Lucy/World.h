@@ -1,5 +1,15 @@
 #ifndef WORLD_H
 #define WORLD_H
+
+#include "Town.h"
+#include "Dimension.h"
+
+enum Location
+{
+	TOWN,
+	DIMENSION
+};
+
 class World
 {
 public:
@@ -7,13 +17,12 @@ public:
 	~World();
 
 	void Update();
+	void SetLocation(const Location &aLocation) { myLocation = aLocation; }
 
 private:
-	void ComputeWorld();
-
-	int
-		myAreaSize,
-		myPathSize;
+	Town myTown;
+	Dimension myDimension;
+	Location myLocation;
 };
 
 #endif

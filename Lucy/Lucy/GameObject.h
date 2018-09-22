@@ -17,11 +17,9 @@ public:
 		myLevel;
 	float
 		myEncounterRate,
-		myDropRateChance,
-		myDamage,
-		myHealth,
-		myHunger,
-		myWater;
+		myDropRateChance;
+	int myDamage,
+		myHealth;
 };
 
 #endif

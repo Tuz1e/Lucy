@@ -6,7 +6,7 @@
 Game::Game()
 {
 	myGState = GameState::MENU;
-	myIsRunning = true;
+	myExecutionFlag = true;
 }
 
 Game::~Game()
@@ -15,7 +15,7 @@ Game::~Game()
 
 void Game::Run()
 {
-	while (myIsRunning)
+	while (myExecutionFlag)
 	{
 		Update();
 	}
@@ -30,33 +30,39 @@ void Game::Update()
 		break;
 
 	case GameState::GAME:
-		myPlayer.Update();
-		myWorld.Update();
+		GPlayer.Update();
+		GWorld.Update();
 		break;
 	}
+	Sleep(25);
+	Empty();
 }
 
 void Game::MainMenu()
 {
-	Print("GAME: " NAME);
-	Print("Author: " AUTHOR "\n");
+	Print("GAME: " NAME, 12);
+	Print("Author: " AUTHOR "\n", 12);
 	Print("[1] Start");
-	Print("[2] Exit");
+	Print("[2] Exit \n");
 
 	std::string tempCho;
 	std::getline(std::cin, tempCho);
-	try
+
+	if (tempCho != "")
 	{
-		myCho = std::stoi(tempCho);
-	}
-	catch (...) {}
-	switch (myCho)
-	{
-	case 1:
-		myGState = GameState::GAME;
-		break;
-	case 2:
-		myIsRunning = false;
-		break;
+		try
+		{
+			myCho = std::stoi(tempCho);
+		}
+		catch (...) {}
+		switch (myCho)
+		{
+		case 1:
+			myGState = GameState::GAME;
+			break;
+		case 2:
+			myExecutionFlag = false;
+			break;
+		}
 	}
 }
